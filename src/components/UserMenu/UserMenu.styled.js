@@ -10,7 +10,7 @@ export const UserMenuContainer = styled.div`
 `;
 
 export const UserName = styled.span`
-  font-size: 30px;
+  font-size: 24px;
 `;
 
 export const LogOutBtn = styled.button`

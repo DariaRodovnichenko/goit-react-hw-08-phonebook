@@ -8,8 +8,8 @@ export const Container = styled.div`
 `;
 
 export const MainTitle = styled.h1`
-  font-size: 32px;
+  font-size: 36px;
   margin: 0;
-  padding: 1.5rem;
+  padding: 1rem;
   color: white;
 `;
