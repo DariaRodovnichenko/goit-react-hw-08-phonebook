@@ -8,7 +8,7 @@ export const Container = styled.div`
 `;
 
 export const MainTitle = styled.h1`
-  font-size: 38px;
+  font-size: 32px;
   margin: 0;
   padding: 1.5rem;
   color: white;
