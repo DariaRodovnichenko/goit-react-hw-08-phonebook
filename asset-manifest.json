@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.96d1f933.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.6fcc356a.js",
+    "static/js/688.e38574da.chunk.js": "/goit-react-hw-08-phonebook/static/js/688.e38574da.chunk.js",
+    "static/js/854.bdf7a994.chunk.js": "/goit-react-hw-08-phonebook/static/js/854.bdf7a994.chunk.js",
+    "static/js/503.fada7f46.chunk.js": "/goit-react-hw-08-phonebook/static/js/503.fada7f46.chunk.js",
+    "static/js/159.295695d0.chunk.js": "/goit-react-hw-08-phonebook/static/js/159.295695d0.chunk.js",
+    "static/js/705.c724a176.chunk.js": "/goit-react-hw-08-phonebook/static/js/705.c724a176.chunk.js",
+    "static/js/907.fc6965b5.chunk.js": "/goit-react-hw-08-phonebook/static/js/907.fc6965b5.chunk.js",
+    "static/js/902.542bc905.chunk.js": "/goit-react-hw-08-phonebook/static/js/902.542bc905.chunk.js",
+    "static/media/red-phone.jpg": "/goit-react-hw-08-phonebook/static/media/red-phone.fc0e7b2a8758c0eabdde.jpg",
+    "index.html": "/goit-react-hw-08-phonebook/index.html",
+    "main.96d1f933.css.map": "/goit-react-hw-08-phonebook/static/css/main.96d1f933.css.map",
+    "main.6fcc356a.js.map": "/goit-react-hw-08-phonebook/static/js/main.6fcc356a.js.map",
+    "688.e38574da.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/688.e38574da.chunk.js.map",
+    "854.bdf7a994.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/854.bdf7a994.chunk.js.map",
+    "503.fada7f46.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/503.fada7f46.chunk.js.map",
+    "159.295695d0.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/159.295695d0.chunk.js.map",
+    "705.c724a176.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/705.c724a176.chunk.js.map",
+    "907.fc6965b5.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/907.fc6965b5.chunk.js.map",
+    "902.542bc905.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/902.542bc905.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.96d1f933.css",
+    "static/js/main.6fcc356a.js"
+  ]
+}
