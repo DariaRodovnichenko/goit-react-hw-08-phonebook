@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
-import { FilterInput, FilterLabel } from "./Filter.styled";
-import { selectFilter } from "redux/selectors";
-import { setFilter } from "redux/filterSlice";
+import { useDispatch, useSelector } from 'react-redux';
+import { selectContacts, selectFilter } from 'redux/selectors';
+import { setFilter } from 'redux/filterSlice';
+import { FilterInput, FilterTitle } from './Filter.styled';
 
 function Filter() {
   const dispatch = useDispatch();
@@ -11,14 +11,17 @@ function Filter() {
     dispatch(setFilter(event.target.value.trim()));
   };
 
-  return (
-    <div>
-      <FilterLabel>
-        Find contacts by name
-        <FilterInput type="text" value={filter} onChange={onChange} />
-      </FilterLabel>
-    </div>
+  return useSelector(selectContacts).length < 1 ? (
+    <FilterTitle>Add your first contact</FilterTitle>
+  ) : (
+    <FilterInput
+      type="text"
+      name="filter"
+      placeholder="Search by name"
+      value={filter}
+      onChange={onChange}
+    />
   );
-};
+}
 
 export default Filter;

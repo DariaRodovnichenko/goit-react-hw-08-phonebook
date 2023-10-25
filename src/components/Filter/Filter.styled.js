@@ -1,9 +1,17 @@
 import styled from 'styled-components';
 
+export const FilterTitle = styled.h3`
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+`;
+
 export const FilterInput = styled.input`
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
+  font-size: 14px;
+  width: 620px;
+  padding: 10px;
+  margin-bottom: 20px;
   border: 1px solid #ddd;
   border-radius: 4px;
 `;

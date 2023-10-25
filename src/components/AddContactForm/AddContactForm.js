@@ -1,16 +1,18 @@
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
 
-import { Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 
 import {
-  StyledForm,
   Label,
   ErrorMsg,
   SubmitBtn,
   StyledField,
+  FormContainer,
 } from './AddContactForm.styled';
+import toast from 'react-hot-toast';
+import { selectContacts } from 'redux/selectors';
 
 const FormSchema = Yup.object().shape({
   name: Yup.string()
@@ -18,71 +20,71 @@ const FormSchema = Yup.object().shape({
     .max(50, 'Too Long!')
     .required('Required'),
 
-  phone: Yup.string().required('Required'),
+  number: Yup.string().required('Required'),
 });
 
-const AddContactForm = ({ contacts, addContact }) => {
-  const lowercaseNames = new Set(
-    contacts.map(contact => contact.name.toLowerCase())
-  );
+const AddContactForm = () => {
+  const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
+
+  const handleFormSubmit = (values, actions) => {
+    const newContact = {
+      name: values.name,
+      number: values.number,
+    };
+
+    if (
+      contacts.length !== 0 &&
+      contacts.find(
+        contact =>
+          contact.name.toLowerCase().trim() === values.name.toLowerCase().trim()
+      )
+    ) {
+      toast.error(`${values.name} is already in contacts`);
+      actions.setSubmitting(false);
+      return;
+    }
+
+    dispatch(addContact(newContact));
+    actions.resetForm();
+  };
+
   return (
-    <div>
+    <FormContainer>
       <Formik
         initialValues={{
           name: '',
-          phone: '',
+          number: '',
         }}
         validationSchema={FormSchema}
-        onSubmit={(values, actions) => {
-          const nameToLower = values.name.toLowerCase();
-
-          if (lowercaseNames.has(nameToLower)) {
-            alert('Contact with this name already exists!');
-          } else {
-            addContact({ name: values.name, phone: values.phone });
-            lowercaseNames.add(nameToLower);
-            actions.resetForm();
-          }
-        }}
+        onSubmit={handleFormSubmit}
       >
         {({ errors, touched }) => (
-          <StyledForm>
+          <Form>
             <Label>
-              Name
               <StyledField
                 name="name"
                 type="text"
+                placeholder="Name"
                 hasError={touched.name && errors.name}
               />
               <ErrorMsg name="name" component="div" />
             </Label>
-
             <Label>
-              Number
               <StyledField
-                name="phone"
+                name="number"
                 type="tel"
-                hasError={touched.phone && errors.phone}
+                placeholder="Number"
+                hasError={touched.number && errors.number}
               />
-              <ErrorMsg name="phone" component="div" />
+              <ErrorMsg name="number" component="div" />
             </Label>
-
             <SubmitBtn type="submit">Add contact</SubmitBtn>
-          </StyledForm>
+          </Form>
         )}
       </Formik>
-    </div>
+    </FormContainer>
   );
 };
 
-const mapStateToProps = state => ({
-  contacts: state.contacts.items,
-});
-
-const mapDispatchToProps = dispatch => ({
-  addContact: contact => {
-    dispatch(addContact(contact));
-  },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(AddContactForm);
+export default AddContactForm;

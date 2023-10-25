@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import {  ErrorMessage, Field } from 'formik';
-
-export const FormContainer = styled.div`
+export const LogInContainer = styled.div`
   width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -10,18 +8,26 @@ export const FormContainer = styled.div`
   border-radius: 5px;
   background-color: transparent;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: auto;
+`;
+
+export const FormGroup = styled.div`
   margin-bottom: 20px;
 `;
 
-export const StyledField = styled(Field)`
+export const LogInLbl = styled.label`
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+`;
+
+export const LogInInput = styled.input`
   width: 90%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-  font-weight: normal;
   margin-bottom: 4px;
 
   ${props =>
@@ -32,31 +38,21 @@ export const StyledField = styled(Field)`
 
   &:focus {
     outline: none;
-    border-color: #007bff;
+    border: 3px solid gold;
   }
 `;
 
-export const Label = styled.label`
-  display: block;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-`;
-
-export const ErrorMsg = styled(ErrorMessage)`
+export const Error = styled.div`
   color: white;
   font-size: 16px;
-  font-weight: bold;
 `;
 
-export const SubmitBtn = styled.button`
+export const LogInBtn = styled.button`
   background: white;
   color: #63666a;
-  font-weight: normal;
+  font-weight: bold;
   letter-spacing: 1px;
-  padding: 10px;
-  height: 40px;
+  padding: 10px 20px;
   border: rgba(227, 37, 26, 255);
   border-radius: 5px;
   box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
